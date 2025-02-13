@@ -1,8 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { M_PLUS_1 } from "next/font/google";
+import { ThemeProvider } from 'next-themes'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const mPlus1 = M_PLUS_1({
+  weight: ["400", "700", "900"], // 使用する太さを配列で指定
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap", // ここが大事
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +22,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="jp">
+      <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode" />
+      </head>
+      <body className={mPlus1.className}>
+        <ThemeProvider defaultTheme="system" enableSystem={true}>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

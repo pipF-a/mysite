@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 import Styles from './header.module.scss'
-import { ThemeToggle } from "../atoms/ThemeToggle"
+import { ThemeToggle } from "@/components/atoms/ThemeToggle"
 
 interface HeaderProps {
     title:string

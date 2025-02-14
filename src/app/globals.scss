@@ -1,8 +1,10 @@
+
 /* システムを考慮したモードごとのスタイル */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212;
     color: #e0e0e0;
+    transition: all 0.5s 0s ease;
   }
 }
 
@@ -10,6 +12,7 @@
   body {
     background-color: #ffffff;
     color: #000000;
+    transition: all 0.5s 0s ease;
   }
 }
 
@@ -22,4 +25,14 @@
 [data-theme='light'] body {
   background-color: #ffffff;
   color: #000000;
+}
+
+/* ボタンのスタイルを初期化 */
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none
 }

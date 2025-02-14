@@ -1,6 +1,38 @@
-.header {
-    padding: 0 120px;
-    &Wrap {
 
+@use 'sass:math';
+
+// mixin
+// フォント px & rem 併記
+@mixin fz($size: 16) {
+  @if not unitless($size) {
+    @error '数値には単位不要です： #{$size}';
+  }
+  font-size: math.div($size, 10) + rem;
+}
+
+//px → vw
+@mixin fzvw($size: 16, $baseWidth: 1440) {
+  // baseWidthにはカンバスサイズを設定してください
+  @if not unitless($size) {
+    @error '数値には単位不要です： #{$size}';
+  }
+  @if not unitless($baseWidth) {
+    @error '数値には単位不要です： #{$baseWidth}';
+  }
+  font-size: math.div($size, $baseWidth) * 100 + vw;
+}
+
+.header {
+    &Wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px 120px;
+    }
+
+    &Title {
+      font-weight: lighter;
+      margin-inline: auto;
+      @include fz(20);
     }
 }

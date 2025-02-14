@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { M_PLUS_1 } from "next/font/google";
-import { ThemeProvider } from 'next-themes'
-import './globals.css'
+import { ThemeProvider } from 'next-themes';
+import './reset.css';
+import './globals.scss';
+
 
 
 const mPlus1 = M_PLUS_1({
@@ -25,6 +27,7 @@ export default function RootLayout({
     <html lang="jp">
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode" />
       </head>
       <body className={mPlus1.className}>
         <ThemeProvider defaultTheme="system" enableSystem={true}>
